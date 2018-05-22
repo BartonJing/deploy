@@ -1,0 +1,4 @@
+# deploy
+deploy(springboot项目打包发布)
+为解决springboot项目从Windows打包发布到Linux启动
+此项目比较简单，暂时只实现了从window到Linux的打包发布，其余平台的接口以提供，未实现。
