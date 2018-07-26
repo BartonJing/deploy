@@ -26,14 +26,17 @@ public class WinDeploy {
     private static final Log logger = LogFactory.get();
     public static void main(String [] args){
         OperateService operateService = new WinOperateService();
-
+        //获取配置信息
         PropertiesUtil propertiesUtil = PropertiesUtil.getInstance();
+        //配置信息 Project
         List<Project> projects = propertiesUtil.getProperties().getProject();
+        //遍历配置的项目信息，依次处理
         if(projects != null && projects.size()>0){
             for(Project project : projects){
                 Boolean isPackage = project.getPackage();
+                //是否要编译打包
                 if(isPackage){
-                    //mvn 打包java项目
+                    //运行编译打包脚本
                     operateService.packageProject();
                 }
                 //上传,并启动项目

@@ -9,20 +9,20 @@
         <!--项目源 信息-->
         <src>
             <!--项目名称-->
-            <name>jyplatform-0.0.1-SNAPSHOT.jar</name>
+            <name>ssm-0.0.1-SNAPSHOT.jar</name>
             <!--项目目录-->
-            <dir>D:\\workspace\\jyplatform\\</dir>
+            <dir>D:\\workspace\\SSM\\</dir>
             <!--打包后的jar包存放位置-->
-            <path>D:\\workspace\\jyplatform\\target\\jyplatform-0.0.1-SNAPSHOT.jar</path>
+            <path>D:\\workspace\\SSM\\target\\ssm-0.0.1-SNAPSHOT.jar</path>
         </src>
         <!--项目目标 信息-->
         <target>
             <!--ip地址-->
-            <ip>192.168.56.5</ip>
+            <ip>106.12.9.75</ip>
             <!--用户-->
             <username>barton</username>
             <!--密码-->
-            <password>barton</password>
+            <password>bartonbcc</password>
             <!--端口-->
             <port>22</port>
             <!--私钥地址-->
@@ -30,7 +30,7 @@
             <!--存放项目目录-->
             <dir>/home/barton/test/</dir>
             <!--项目路径-->
-            <path>/home/barton/test/jyplatform-0.0.1-SNAPSHOT.jar</path>
+            <path>/home/barton/test/ssm-0.0.1-SNAPSHOT.jar</path>
             <!--是否备份-->
             <backup>true</backup>
             <!--备份目录-->

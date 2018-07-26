@@ -46,10 +46,10 @@
         </dependency>
 
     </dependencies>
-    <build>
+    <!--<build>
         <sourceDirectory>src/main/java</sourceDirectory>
         <resources>
-            <!-- 把src/main/resources目录下所有的文件拷贝到conf目录中 -->
+            &lt;!&ndash; 把src/main/resources目录下所有的文件拷贝到conf目录中 &ndash;&gt;
             <resource>
                 <directory>src/main/resources</directory>
                 <includes>
@@ -58,13 +58,13 @@
                 </includes>
                 <targetPath>${project.build.directory}/conf</targetPath>
             </resource>
-            <!-- 把lib目录下所有的文件拷贝到lib目录中
-            （可能有些jar包没有办法在maven中找到，需要放在lib目录中） -->
+            &lt;!&ndash; 把lib目录下所有的文件拷贝到lib目录中
+            （可能有些jar包没有办法在maven中找到，需要放在lib目录中） &ndash;&gt;
             <resource>
                 <directory>lib</directory>
                 <targetPath>${project.build.directory}/lib</targetPath>
             </resource>
-            <!-- 把放在根目录下的脚本文件.sh,.bat拷贝到bin目录中 -->
+            &lt;!&ndash; 把放在根目录下的脚本文件.sh,.bat拷贝到bin目录中 &ndash;&gt;
             <resource>
                 <directory>.</directory>
                 <includes>
@@ -73,7 +73,7 @@
                 </includes>
                 <targetPath>${project.build.directory}/bin</targetPath>
             </resource>
-            <!-- 把src/main/resources目录下所有的文件拷贝到conf目录中 -->
+            &lt;!&ndash; 把src/main/resources目录下所有的文件拷贝到conf目录中 &ndash;&gt;
             <resource>
                 <directory>src/main/resources</directory>
                 <includes>
@@ -85,28 +85,28 @@
         </resources>
 
         <plugins>
-            <!-- 用于编译的plugin -->
+            &lt;!&ndash; 用于编译的plugin &ndash;&gt;
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
                 <configuration>
                     <fork>true</fork>
-                    <!--<defaultLibBundleDir>lib</defaultLibBundleDir>-->
+                    &lt;!&ndash;<defaultLibBundleDir>lib</defaultLibBundleDir>&ndash;&gt;
                     <source>1.8</source>
                     <target>1.8</target>
                     <encoding>UTF-8</encoding>
-                    <!-- 如果配置了JAVA_HOME,下面应该可以不用配 -->
-                    <!--<executable>C:\Program Files (x86)\Java\jdk1.8.0_91\bin\javac.exe</executable>-->
+                    &lt;!&ndash; 如果配置了JAVA_HOME,下面应该可以不用配 &ndash;&gt;
+                    &lt;!&ndash;<executable>C:\Program Files (x86)\Java\jdk1.8.0_91\bin\javac.exe</executable>&ndash;&gt;
                 </configuration>
             </plugin>
-            <!-- 用于生成jar包的plugin -->
+            &lt;!&ndash; 用于生成jar包的plugin &ndash;&gt;
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>2.6</version>
                 <configuration>
-                    <!-- 把生成的jar包放在lib目录下（和其他所有jar包一起） -->
+                    &lt;!&ndash; 把生成的jar包放在lib目录下（和其他所有jar包一起） &ndash;&gt;
                     <outputDirectory>${project.build.directory}/lib</outputDirectory>
                     <archive>
                         <manifest>
@@ -115,16 +115,16 @@
                         </manifest>
                     </archive>
                     <excludes>
-                        <!-- 排除掉一些文件,不要放到jar包中，
+                        &lt;!&ndash; 排除掉一些文件,不要放到jar包中，
                         这里是为了排除掉src/main/resources中的文件（它们应该放到conf目录）
-                        这里只能指定要排除的目标文件，而不能指定源文件，虽然不够完美，但是基本能达到目的。 -->
+                        这里只能指定要排除的目标文件，而不能指定源文件，虽然不够完美，但是基本能达到目的。 &ndash;&gt;
                         <exclude>*.xml</exclude>
                         <exclude>*.properties</exclude>
                     </excludes>
                 </configuration>
             </plugin>
 
-            <!-- 用于拷贝maven依赖的plugin -->
+            &lt;!&ndash; 用于拷贝maven依赖的plugin &ndash;&gt;
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -137,14 +137,14 @@
                             <goal>copy-dependencies</goal>
                         </goals>
                         <configuration>
-                            <!-- 把依赖的所有maven jar包拷贝到lib目录中（这样所有的jar包都在lib目录中） -->
+                            &lt;!&ndash; 把依赖的所有maven jar包拷贝到lib目录中（这样所有的jar包都在lib目录中） &ndash;&gt;
                             <outputDirectory>${project.build.directory}/lib</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
 
-            <!-- 用于拷贝resource的plugin -->
+            &lt;!&ndash; 用于拷贝resource的plugin &ndash;&gt;
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -154,14 +154,14 @@
                 </configuration>
             </plugin>
 
-            <!-- 配置生成源代码jar的plugin -->
+            &lt;!&ndash; 配置生成源代码jar的plugin &ndash;&gt;
             <plugin>
                 <artifactId>maven-source-plugin</artifactId>
                 <version>2.4</version>
                 <configuration>
                     <attach>true</attach>
-                    <!--<encoding>UTF-8</encoding>-->
-                    <!-- 配置源代码jar文件的存放路径，和其他jar文件一起放在lib目录 -->
+                    &lt;!&ndash;<encoding>UTF-8</encoding>&ndash;&gt;
+                    &lt;!&ndash; 配置源代码jar文件的存放路径，和其他jar文件一起放在lib目录 &ndash;&gt;
                     <outputDirectory>${project.build.directory}/lib</outputDirectory>
                 </configuration>
                 <executions>
@@ -175,6 +175,6 @@
             </plugin>
 
         </plugins>
-    </build>
+    </build>-->
 
 </project>
