@@ -1,7 +1,9 @@
 #start project 查找要启动的项目进程号杀死后启动
 NAME=$1
+SHELL=$2
 echo $NAME
-ID=`ps -ef | grep "$NAME" | grep -v "grep" | awk '{print $2}'`
+echo $SHELL
+ID=`ps -ef | grep "$NAME" | grep -v "grep" | grep -v "$SHELL" | awk '{print $2}'`
 if  [ ! -n "$ID" ] ;then
     echo "No startup process was found -- $NAME!"
 else

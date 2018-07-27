@@ -87,6 +87,7 @@ public class RemoteExecuteCommand {
             BufferedReader br = new BufferedReader(new InputStreamReader(stdout,charset));
             String line=null;
             while((line=br.readLine()) != null){
+                System.out.println(line);
                 buffer.append(line+"\n");
             }
         } catch (UnsupportedEncodingException e) {
