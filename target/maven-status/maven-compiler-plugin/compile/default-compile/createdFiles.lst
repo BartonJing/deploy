@@ -19,3 +19,4 @@ com\barton\utils\SFTPUtil.class
 com\barton\domain\config\Project.class
 com\barton\utils\FileUtil.class
 com\barton\utils\ProcessUtil.class
+com\barton\utils\Test.class

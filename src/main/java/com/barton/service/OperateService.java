@@ -78,7 +78,7 @@ public abstract class OperateService {
             }
 
             //上传文件
-            //sftpUtil.upload(targetDir,srcPath);
+            sftpUtil.upload(targetDir,srcPath);
             sftpUtil.disconnect();
             //启动项目
             logger.info("开始启动项目->    {}",projectName);
