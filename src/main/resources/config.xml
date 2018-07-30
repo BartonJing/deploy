@@ -5,7 +5,7 @@
         <!--项目编号-->
         <code>0</code>
         <!--是否打包-->
-        <isPackage>false</isPackage>
+        <isPackage>true</isPackage>
         <!--项目源 信息-->
         <src>
             <!--项目名称-->

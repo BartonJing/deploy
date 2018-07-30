@@ -1,6 +1,7 @@
 #start project 查找要启动的项目进程号杀死后启动
 NAME=$1
 SHELL=$2
+NOHUPDIR=$3
 echo $NAME
 echo $SHELL
 ID=`ps -ef | grep "$NAME" | grep -v "grep" | grep -v "$SHELL" | awk '{print $2}'`
@@ -14,4 +15,4 @@ else
     done
 fi
 echo "start project $NAME"
-java -jar  -Dspring.profiles.active=dev "$NAME"
+nohup java -jar  -Dspring.profiles.active=dev "$NAME" >> "$NOHUPDIR" &

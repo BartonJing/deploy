@@ -1,8 +1,17 @@
 package com.barton.service;
 
-public class LinuxOperateService extends OperateService {
-    public void packageProject() {
+import com.barton.domain.config.Project;
+import com.barton.utils.ProcessUtil;
 
+public class LinuxOperateService extends OperateService {
+    /**
+     * 执行打包项目脚本
+     */
+    public void packageProject(Project project) {
+        StringBuilder cmd = new StringBuilder();
+        //打包本地项目
+        cmd.append("cmd /c start package.bat");
+        ProcessUtil.convert(cmd);
     }
 
 }

@@ -22,7 +22,7 @@ public abstract class OperateService {
     /**
      * 打包项目
      */
-    public abstract void packageProject();
+    public abstract void packageProject(Project project);
 
 
     /**
@@ -82,7 +82,7 @@ public abstract class OperateService {
             sftpUtil.disconnect();
             //启动项目
             logger.info("开始启动项目->    {}",projectName);
-            String shell = "nohup " + targetScriptDir+CommonEnum.STARTPROJECT.getShellName()+" "+targetDir+projectName + " " + CommonEnum.STARTPROJECT.getShellName() + " &";
+            String shell = targetScriptDir+CommonEnum.STARTPROJECT.getShellName()+" "+targetDir+projectName + " " + CommonEnum.STARTPROJECT.getShellName() + " " + targetDir+"nohup.out";
             logger.info(shell);
             rec.executePty(shell);
         } catch (Exception e) {

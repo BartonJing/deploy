@@ -37,8 +37,9 @@ public class WinDeploy {
                 //是否要编译打包
                 if(isPackage){
                     //运行编译打包脚本
-                    operateService.packageProject();
+                    operateService.packageProject(project);
                 }
+                System.out.println("打包完成");
                 //上传,并启动项目
                 operateService.execute(project);
             }
