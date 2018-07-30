@@ -5,7 +5,7 @@ deploy(springboot项目打包发布
 尤其是jenkins要在安装单独的服务，在服务器上还得安装maven,git等觉得比较麻烦，于是自己根据打包发布部署的操作使用
 java+shell 编写了此项目：
 此项目比较简单，暂时只实现了从window,linux到Linux的打包发布，其余平台的接口以提供，未实现。
-
+可直接下载deploy-1.0.rar解压运行
 
 项目使用maven 构建 pom文件如下
     <?xml version="1.0" encoding="UTF-8"?>
