@@ -1,5 +1,6 @@
 package com.barton.utils;
 
+import ch.ethz.ssh2.ChannelCondition;
 import ch.ethz.ssh2.Connection;
 import ch.ethz.ssh2.Session;
 import ch.ethz.ssh2.StreamGobbler;
@@ -96,6 +97,61 @@ public class RemoteExecuteCommand {
             e.printStackTrace();
         }
         return buffer.toString();
+    }
+
+
+
+    /**
+     * 远程执行shll脚本或者命令
+     * @param cmd
+     *      即将执行的命令
+     * @return
+     *      命令执行完后返回的结果值
+     */
+    public void executePty(String cmd){
+        try {
+            if(login()){
+                Session session= conn.openSession();//打开一个会话
+                session.requestPTY("batch");
+                session.startShell();
+                InputStream stdout = new StreamGobbler(session.getStdout());//输出信息
+                InputStream stderr = new StreamGobbler(session.getStderr());//输出错误信息
+
+                BufferedReader stdoutReader = new BufferedReader(new InputStreamReader(stdout));
+                BufferedReader stderrReader = new BufferedReader(new InputStreamReader(stderr));
+
+                PrintWriter out =new PrintWriter(session.getStdin());
+
+                //out.println("env");
+                out.println(cmd);
+                out.println("exit");
+
+                out.close();
+                session.waitForCondition(ChannelCondition.CLOSED | ChannelCondition.EOF | ChannelCondition.EXIT_STATUS, 30000);
+                //输出正常日志信息
+                while (true)
+                {
+                    String line = stdoutReader.readLine();
+                    if (line == null)
+                        break;
+                    System.out.println(line);
+                }
+                //输出错误日志信息
+                while (true)
+                {
+                    String line = stderrReader.readLine();
+                    if (line == null)
+                        break;
+                    System.out.println(line);
+                }
+                /* Show exit status, if available (otherwise "null") */
+                System.out.println("ExitCode: " + session.getExitStatus());
+                session.close();/* Close this session */
+                conn.close();/* Close the connection */
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void setCharset(String charset) {

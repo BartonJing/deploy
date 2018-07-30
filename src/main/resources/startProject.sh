@@ -14,5 +14,4 @@ else
     done
 fi
 echo "start project $NAME"
-
-nohup java -jar  -Dspring.profiles.active=dev "$NAME"
+java -jar  -Dspring.profiles.active=dev "$NAME"

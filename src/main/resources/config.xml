@@ -32,7 +32,7 @@
             <!--项目路径-->
             <path>/home/barton/test/ssm-0.0.1-SNAPSHOT.jar</path>
             <!--是否备份-->
-            <backup>true</backup>
+            <backup>false</backup>
             <!--备份目录-->
             <backupDir>/home/barton/test/backup/</backupDir>
         </target>
