@@ -36,9 +36,5 @@
             <!--备份目录-->
             <backupDir>/home/barton/test/backup/</backupDir>
         </target>
-
     </project>
-
-
-
 </properties>
