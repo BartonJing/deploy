@@ -9,6 +9,7 @@ java+shell 编写了此项目：
 可直接下载deploy-1.0.rar解压运行
 
 项目使用maven 构建 pom文件如下
+
     <?xml version="1.0" encoding="UTF-8"?>
     <project xmlns="http://maven.apache.org/POM/4.0.0"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -194,6 +195,7 @@ java+shell 编写了此项目：
 
 
 使用步骤：
+
         1.需要在自己的服务器上安装你的项目运行所需环境，确保手动部署可以启动并正常运行，如：jdk等
         
         2.下载deploy-1.0.rar解压
