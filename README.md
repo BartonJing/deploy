@@ -192,53 +192,54 @@ java+shell 编写了此项目：
 
 （注:代码调试时请注释掉 pom 文件中的 build 标签内容)
 
+
 使用步骤：
-    1.需要在自己的服务器上安装你的项目运行所需环境，确保手动部署可以启动并正常运行，如：jdk等
-    2.下载deploy-1.0.rar解压
-    3.配置conf下的config.xml文件
-        <properties>
-            <!--项目信息-->
-            <project>
-                <!--项目编号-->
-                <code>0</code>
-                <!--是否打包-->
-                <isPackage>false</isPackage>
-                <!--项目源 信息-->
-                <src>
-                    <!--项目名称-->
-                    <name>test-0.0.1-SNAPSHOT.jar</name>
-                    <!--项目目录-->
-                    <dir>D:\\workspace\\test\\</dir>
-                    <!--打包后的jar包存放位置-->
-                    <path>D:\\workspace\\test\\target\\ssm-0.0.1-SNAPSHOT.jar</path>
-                </src>
-                <!--项目目标 信息-->
-                <target>
-                    <!--ip地址-->
-                    <ip>xxx.xx.x.xx75</ip>
-                    <!--用户-->
-                    <username>username</username>
-                    <!--密码-->
-                    <password>password</password>
-                    <!--端口-->
-                    <port>22</port>
-                    <!--私钥地址-->
-                    <keyFilePath></keyFilePath>
-                    <!--存放项目目录-->
-                    <dir>/home/test/test/</dir>
-                    <!--项目路径-->
-                    <path>/home/test/test/test-0.0.1-SNAPSHOT.jar</path>
-                    <!--是否备份-->
-                    <backup>false</backup>
-                    <!--备份目录-->
-                    <backupDir>/home/test/test/backup/</backupDir>
-                </target>
-            </project>
-        </properties>
-    4.双击bin文件下的start.bat（linux start.sh）文件启动，即可完成部署
-    
-    其他配置：一般的springboot 项目使用上述步骤就可以了，但是如果是有其他的启动等方式，可以修改bin目录下的shell脚本
-    已达到自己的需求
+        1.需要在自己的服务器上安装你的项目运行所需环境，确保手动部署可以启动并正常运行，如：jdk等
+        2.下载deploy-1.0.rar解压
+        3.配置conf下的config.xml文件
+            <properties>
+                <!--项目信息-->
+                <project>
+                    <!--项目编号-->
+                    <code>0</code>
+                    <!--是否打包-->
+                    <isPackage>false</isPackage>
+                    <!--项目源 信息-->
+                    <src>
+                        <!--项目名称-->
+                        <name>test-0.0.1-SNAPSHOT.jar</name>
+                        <!--项目目录-->
+                        <dir>D:\\workspace\\test\\</dir>
+                        <!--打包后的jar包存放位置-->
+                        <path>D:\\workspace\\test\\target\\ssm-0.0.1-SNAPSHOT.jar</path>
+                    </src>
+                    <!--项目目标 信息-->
+                    <target>
+                        <!--ip地址-->
+                        <ip>xxx.xx.x.xx75</ip>
+                        <!--用户-->
+                        <username>username</username>
+                        <!--密码-->
+                        <password>password</password>
+                        <!--端口-->
+                        <port>22</port>
+                        <!--私钥地址-->
+                        <keyFilePath></keyFilePath>
+                        <!--存放项目目录-->
+                        <dir>/home/test/test/</dir>
+                        <!--项目路径-->
+                        <path>/home/test/test/test-0.0.1-SNAPSHOT.jar</path>
+                        <!--是否备份-->
+                        <backup>false</backup>
+                        <!--备份目录-->
+                        <backupDir>/home/test/test/backup/</backupDir>
+                    </target>
+                </project>
+            </properties>
+        4.双击bin文件下的start.bat（linux start.sh）文件启动，即可完成部署
+
+        其他配置：一般的springboot 项目使用上述步骤就可以了，但是如果是有其他的启动等方式，可以修改bin目录下的shell脚本
+        已达到自己的需求
     
     
 
