@@ -25,7 +25,7 @@ public class ProcessUtil {
             //读取输出日志
             //ProcessInterceptor output = new ProcessInterceptor(proc.getInputStream());
             try{
-                InputStreamReader isr = new InputStreamReader(proc.getInputStream(), "gbk");
+                InputStreamReader isr = new InputStreamReader(proc.getInputStream(), "utf-8");
                 BufferedReader br = new BufferedReader(isr);
                 String line = null;
                 while ((line = br.readLine()) != null) {

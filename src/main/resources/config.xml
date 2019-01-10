@@ -5,20 +5,20 @@
         <!--项目编号-->
         <code>0</code>
         <!--是否打包-->
-        <isPackage>true</isPackage>
+        <isPackage>false</isPackage>
         <!--项目源 信息-->
         <src>
             <!--项目名称-->
             <name>ssm-0.0.1-SNAPSHOT.jar</name>
             <!--项目目录-->
-            <dir>D:\\workspace\\SSM\\</dir>
+            <dir>/home/barton/mytemp/</dir>
             <!--打包后的jar包存放位置-->
-            <path>D:\\workspace\\SSM\\target\\ssm-0.0.1-SNAPSHOT.jar</path>
+            <path>/home/barton/mytemp/test.jar</path>
         </src>
         <!--项目目标 信息-->
         <target>
             <!--ip地址-->
-            <ip>106.12.9.75</ip>
+            <ip>106.12.209.70</ip>
             <!--用户-->
             <username>barton</username>
             <!--密码-->
@@ -30,7 +30,7 @@
             <!--存放项目目录-->
             <dir>/home/barton/test/</dir>
             <!--项目路径-->
-            <path>/home/barton/test/ssm-0.0.1-SNAPSHOT.jar</path>
+            <path>/home/barton/test/test.jar</path>
             <!--是否备份-->
             <backup>false</backup>
             <!--备份目录-->
