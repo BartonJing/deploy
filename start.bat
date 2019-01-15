@@ -6,5 +6,5 @@ set JAVA=%JAVA_HOME%/bin/java
 set CLASSPATH=%CLASSPATH%;../conf;../bin
 set JAVA_OPTIONS=-Djava.ext.dirs="../lib"
 
-"%JAVA%" -Xms512m -Xmx1024m -classpath "%CLASSPATH%" %JAVA_OPTIONS% com.barton.WinDeploy
+"%JAVA%" -Xms512m -Xmx1024m -classpath "%CLASSPATH%" %JAVA_OPTIONS% com.barton.WinDeploy %1
 @pause

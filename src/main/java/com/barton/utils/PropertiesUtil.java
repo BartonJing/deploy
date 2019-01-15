@@ -1,6 +1,7 @@
 package com.barton.utils;
 
 
+import cn.hutool.core.util.StrUtil;
 import com.barton.domain.config.Project;
 import com.barton.domain.config.Properties;
 import com.barton.domain.config.Src;
@@ -15,15 +16,17 @@ public class PropertiesUtil {
 
     private Properties properties;
     public static PropertiesUtil propertiesUtil;
+    //默认配置文件
+    private static final String DEFALUTCONFIG = "config.xml";
 
-    public static PropertiesUtil getInstance(){
+    public static PropertiesUtil getInstance(String configFileName){
         if(propertiesUtil == null){
-            propertiesUtil = new PropertiesUtil();
+            propertiesUtil = new PropertiesUtil(configFileName);
         }
         return propertiesUtil;
     }
-    public PropertiesUtil(){
-        initProperties();
+    public PropertiesUtil(String configFileName){
+        initProperties(configFileName);
     }
     /**
      * 读取properties中的信息
@@ -46,8 +49,11 @@ public class PropertiesUtil {
     /**
      * 初始化配置信息
      */
-    public void initProperties(){
-        String path = PropertiesUtil.class.getClass().getResource("/config.xml").getPath();
+    public void initProperties(String configFileName){
+        if(StrUtil.isEmpty(configFileName)){
+            configFileName = DEFALUTCONFIG;
+        }
+        String path = PropertiesUtil.class.getClass().getResource("/"+configFileName).getPath();
         String xmlStr = FileUtil.xml2String(new File(path));
 
         Properties properties = JaxbMapper.fromXml(xmlStr, com.barton.domain.config.Properties.class);
@@ -106,7 +112,7 @@ public class PropertiesUtil {
     }
 
 public static void main(String [] args){
-    PropertiesUtil propertiesUtil = PropertiesUtil.getInstance();
+    PropertiesUtil propertiesUtil = PropertiesUtil.getInstance(DEFALUTCONFIG);
     Target target = propertiesUtil.generateOneTarget(0);
     System.out.print(target);
 

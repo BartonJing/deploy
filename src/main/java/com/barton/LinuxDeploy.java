@@ -18,9 +18,14 @@ import java.util.List;
 public class LinuxDeploy {
     private static final Log logger = LogFactory.get();
     public static void main(String [] args){
+        String configFile = null;
+        if(args != null && args.length > 0){
+            configFile = args[0];
+        }
+        logger.info("配置信息："+configFile);
         OperateService operateService = new LinuxOperateService();
         //获取配置信息
-        PropertiesUtil propertiesUtil = PropertiesUtil.getInstance();
+        PropertiesUtil propertiesUtil = PropertiesUtil.getInstance(configFile);
         //配置信息 Project
         List<Project> projects = propertiesUtil.getProperties().getProject();
         //遍历配置的项目信息，依次处理
