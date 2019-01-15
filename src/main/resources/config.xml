@@ -5,36 +5,36 @@
         <!--项目编号-->
         <code>0</code>
         <!--是否打包-->
-        <isPackage>true</isPackage>
+        <isPackage>false</isPackage>
         <!--项目源 信息-->
         <src>
             <!--项目名称-->
-            <name>territory-0.0.1-SNAPSHOT.jar</name>
+            <name>xx.jar</name>
             <!--项目目录-->
-            <dir>/home/barton/workspace/territory/</dir>
+            <dir>/home/xx/xx/xx/</dir>
             <!--打包后的jar包存放位置-->
-            <path>/home/barton/workspace/territory/target/territory-0.0.1-SNAPSHOT.jar</path>
+            <path>/home/xx/xx/xx/xx/xx.jar</path>
         </src>
         <!--项目目标 信息-->
         <target>
             <!--ip地址-->
-            <ip>106.12.209.70</ip>
+            <ip>xx.xx.xx.xx</ip>
             <!--用户-->
-            <username>barton</username>
+            <username>xx</username>
             <!--密码-->
-            <password>bartonbcc</password>
+            <password>xxxxx</password>
             <!--端口-->
             <port>22</port>
             <!--私钥地址-->
             <keyFilePath></keyFilePath>
             <!--存放项目目录-->
-            <dir>/home/barton/test/</dir>
+            <dir>/home/xx/xx/</dir>
             <!--项目路径-->
-            <path>/home/barton/test/test.jar</path>
+            <path>/home/xx/xx/xx.jar</path>
             <!--是否备份-->
             <backup>false</backup>
             <!--备份目录-->
-            <backupDir>/home/barton/test/backup/</backupDir>
+            <backupDir>/home/xx/xx/xx/</backupDir>
         </target>
     </project>
 </properties>
