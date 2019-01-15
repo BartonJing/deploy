@@ -15,7 +15,7 @@ public class LinuxOperateService extends OperateService {
         Src src = project.getSrc();
         String srcDir = src.getDir();
         //打包本地项目
-        cmd.append("./"+ CommonEnum.LINUPACKAGE.getShellName() + " " + srcDir);
+        cmd.append("sh ./"+ CommonEnum.LINUPACKAGE.getShellName() + " " + srcDir);
         ProcessUtil.convert(cmd);
     }
 

@@ -5,15 +5,15 @@
         <!--项目编号-->
         <code>0</code>
         <!--是否打包-->
-        <isPackage>false</isPackage>
+        <isPackage>true</isPackage>
         <!--项目源 信息-->
         <src>
             <!--项目名称-->
-            <name>ssm-0.0.1-SNAPSHOT.jar</name>
+            <name>territory-0.0.1-SNAPSHOT.jar</name>
             <!--项目目录-->
-            <dir>/home/barton/mytemp/</dir>
+            <dir>/home/barton/workspace/territory/</dir>
             <!--打包后的jar包存放位置-->
-            <path>/home/barton/mytemp/test.jar</path>
+            <path>/home/barton/workspace/territory/target/territory-0.0.1-SNAPSHOT.jar</path>
         </src>
         <!--项目目标 信息-->
         <target>

@@ -7,6 +7,6 @@ echo $1
 cd $1
 pwd
 mvn clean package
-echo "press any key to continue"
-read anykey
+#echo "press any key to continue"
+#read anykey
 exit
